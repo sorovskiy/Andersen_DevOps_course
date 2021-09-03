@@ -8,5 +8,5 @@
 
 [Day 3. 2nd lecture.](day3.md)
 
-[Day 4. 2nd lecture.](day4.md)
+[Day 4. Python again.](day4.md)
 
