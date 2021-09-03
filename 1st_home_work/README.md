@@ -7,3 +7,6 @@
 [Day 2. Python.](day2.md)
 
 [Day 3. 2nd lecture.](day3.md)
+
+[Day 4. 2nd lecture.](day4.md)
+
