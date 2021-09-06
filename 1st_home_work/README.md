@@ -10,3 +10,9 @@
 
 [Day 4. Python again.](day4.md)
 
+[Day 5. Weekend.](day5.md)
+
+[Day 6. Started doing my homework.](day6.md)
+
+[Day 7. Flask sefvice.](day7.md)
+
