@@ -5,7 +5,7 @@
 #### Преобразовать следующий однострочник в красивый скрипт:
 
 sudo netstat -tunapl | awk '/firefox/ {print $5} | cut -d: -f1 | sort | uniq -c | sort | tail -n5 | grep -oP '(\d+\.){3}\d+' | while read IP ; do whois $IP |
-':' '/^Organization/ {print $2}'; done
+awk -F':' '/^Organization/ {print $2}'; done
 
 * создайте README.md и опишите, что будет делать ваш скрипт
 
