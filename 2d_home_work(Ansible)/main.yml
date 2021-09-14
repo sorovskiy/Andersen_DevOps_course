@@ -1,0 +1,91 @@
+---
+# tasks file for test-role
+- hosts: "all"
+  remote_user: "root"
+  tasks:
+
+  - name: "install apache"
+    apt:
+      name: "apache2"
+      update_cache: true
+
+  - name: "install wsgi-apache module"
+    apt:
+      name: "libapache2-mod-wsgi-py3"
+
+  - name: "install python-distutils"
+    apt:
+      name: "python3-distutils"
+
+  - name: "install ufw"
+    apt:
+      name: "ufw"
+
+  - name: download pip installation script
+    command: "wget https://bootstrap.pypa.io/get-pip.py"
+
+  - name: execute pip installation script
+    command: "python3 get-pip.py"
+
+  - name: Install emoji python package
+    pip:
+      name: emoji 
+
+  - name: Install flack python package
+    pip:
+      name: Flask
+
+  - name: Сopying app directory
+    ansible.builtin.copy:
+      src: "files/yourapplication"
+      dest: "/var/www/"
+
+  - name: Сopying files
+    ansible.builtin.copy:
+      src: "files/flaskapp.conf"
+      dest: "/etc/apache2/sites-available/"
+      
+  - name: enabling flaskapp site
+    command: "a2ensite flaskapp"
+
+  - name: "Delete apache2 default site"
+    ansible.builtin.file:
+      path: "/etc/apache2/sites-enabled/000-default.conf"
+      state: "absent"
+
+  - name: Restart service apache2
+    service:
+      name: apache2
+      state: restarted
+
+  - name: allow port 80
+    ufw:
+      rule: allow
+      port: 80
+
+  - name: allow port 22
+    ufw:
+      rule: allow
+      port: 22
+      
+  - name: enable ufw
+    ufw:
+      state: enabled
+      policy: deny
+
+  - name: "Disable root login"
+    lineinfile:
+      path: /etc/ssh/sshd_config
+      regexp: 'PermitRootLogin yes'
+      line: 'PermitRootLogin no'
+
+  - name: Deny logging with password
+    lineinfile:
+      path: /etc/ssh/sshd_config
+      regexp: 'PasswordAuthentication'
+      line: 'PasswordAuthentication no'
+
+  - name: Restart service sshd
+    service:
+      name: sshd
+      state: restarted
