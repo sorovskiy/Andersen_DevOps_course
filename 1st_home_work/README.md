@@ -16,3 +16,17 @@
 
 [Day 7. Flask sefvice.](day7.md)
 
+[Day 8. Virtualbox.](day8.md)
+
+[Day 9. Apache.](day9.md)
+
+[Day 10. Bash.](day10.md)
+
+[Day 11. Day off.](day11.md)
+
+[Day 12. Ansible.](day12.md)
+
+[Day 13. Ansible again.](day13.md)
+
+[Day 14. Ansible finish.](day14.md)
+
