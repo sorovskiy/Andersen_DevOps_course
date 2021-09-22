@@ -30,3 +30,21 @@
 
 [Day 14. Ansible finish.](day14.md)
 
+[Day 15. Start in Go.](day15.md)
+
+[Day 16. VS Code.](day16.md)
+
+[Day 17. Linters.](day17.md)
+
+[Day 18. Developments tools.](day18.md)
+
+[Day 19. tour.golang.org.](day19.md)
+
+[Day 20. Break.](day20.md)
+
+[Day 21. OOP in Golang.](day21.md)
+
+[Day 22. Bot on Go.](day22.md)
+
+[Day 23. Bot deployment.](day23.md)
+
