@@ -34,8 +34,6 @@ do
 	fi
 done
 
-pulls["Hello"]=10
-
 echo -e "\e[42mList of most productive contributors:\e[0m"
 for key in "${!pulls[@]}"
 do
